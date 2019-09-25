@@ -127,7 +127,7 @@
               exemple with machine specification:
 
               ```
-              mkdir /tmp/projectDir;cd /tmp/projectDir;vagrant init hashicorp/precise32
+              mkdir /tmp/projectDir;cd /tmp/projectDir;vagrant init ubuntu/trusty64
               ```
               <br>
               /\*Take a look\*/
@@ -151,10 +151,10 @@
               <br>
               exemple:
               ```bash
-              $ vagrant box add hashicorp/precise32
+              $ vagrant box add ubuntu/trusty64
               ```
               <!-- Boxes are hosted in a --> 
-              * By default boxes are downloaded from HashiCorp\'s Atlas calatogue:<br>https://atlas.hashicorp.com/boxes/search
+              * By default boxes are downloaded from HashiCorp\'s vagrant cloud calatogue:<br>https://vagrantcloud.com/search
               * You can also add boxes from a local file, custom URL, etc.
             </script>
           </section>
@@ -167,7 +167,7 @@
               In the **Vagrantfile**
               ```
               Vagrant.configure("2") do |config|
-                config.vm.box = "hashicorp/precise32"
+                config.vm.box = "ubuntu/trusty64"
               end
               ```
               If the box wasn't added before, Vagrant will automatically download and add the box when it is run
@@ -248,7 +248,7 @@
               we configure Vagrant to run this shell script when setting up our machine by editing the Vagrantfile, which should now look like this:
               ```
               Vagrant.configure("2") do |config|
-                config.vm.box = "hashicorp/precise32"
+                config.vm.box = "ubuntu/trusty64"
                 config.vm.provision :shell, path: "bootstrap.sh"
               end
               ```
@@ -272,7 +272,7 @@
               To do it ... edit Vagrantfile:
               ```
               Vagrant.configure("2") do |config|
-                config.vm.box = "hashicorp/precise32"
+                config.vm.box = "ubuntu/trusty64"
                 config.vm.provision :shell, path: "bootstrap.sh"
                 config.vm.network :forwarded_port, guest: 80, host: 4567
               end
